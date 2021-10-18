@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: my diff
+      run: |
+        git diff ${{ github.ref }} --name-only
     - uses: technote-space/get-diff-action@v5
       with:
         PATTERNS: |
