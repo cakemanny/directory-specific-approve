@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: my diff
       run: |
-        git diff ${{ github.ref }} --name-only
+        git diff ${{ github.event.pull_request.base.sha }} --name-only
     - uses: technote-space/get-diff-action@v5
       with:
         PATTERNS: |
